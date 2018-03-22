@@ -23,6 +23,7 @@
 		<li><a href="#accordions">Accordions</a></li>
     <li><a href="#mobile-menu">Mobile Menu</a></li>
     <li><a href="#smooth-scroll">Smooth Scroll</a></li>
+    <li><a href="#back-to-top">Back to top</a></li>
     <li><a href="#popup">Popup Window</a></li>
     <li><a href="#photo-slider">Photo Slider</a></li>
 	</ul>
@@ -307,6 +308,89 @@
 		</div>
 	</section>
 
+  <section id="back-to-top">
+		<h2>Back to Top button</h2>
+		<div>
+			<p>You may have noticed our button following you in the bottom right hand-side of the screen. Combine this with Smooth Scroll (section above) for a nice effect. You will also notice that it only appears after you scroll past a certain point on the page. You can use the JS below to implement this</p>
+		</div>
+
+    <hr />
+
+		<strong>Dependencies:</strong>
+		<ul>
+      <li>Include script for <a href="http://jquery.com/download/" target="_blank">jQuery</a></li>
+		</ul>
+
+		<div class="code-blocks">
+			<strong>HTML</strong>
+			<div class="code">
+				<code>
+          &lt;a href="#"&gt;<br />
+          <div class="indent">
+            &lt;img src="images/back-top.png" alt="back to top" /&gt;
+          </div>
+          &lt;/a&gt;
+				</code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>CSS</strong>
+			<div class="code">
+        <code>
+          .back-to-top{<br />
+            <div class="indent">
+            display: block;<br />
+            width: 100px;<br />
+            height: 100px;<br />
+            position: fixed;<br />
+            bottom: 20px;<br />
+            right: 20px;<br />
+            </div>
+          }<br />
+          .back-to-top img{<br />
+            <div class="indent">
+            width: 100%;<br />
+            </div>
+          }<br />
+          @media (max-width: 540px){<br />
+            <div class="indent">
+            .back-to-top{<br />
+              <div class="indent">
+                height: 60px;<br />
+                width: 60px;<br />
+              </div>
+            }<br />
+            </div>
+          }
+        </code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>JS</strong>
+			<div class="code">
+        <code>
+          /* this must be outside of the $(document).ready function */<br />
+          $(window).scroll(function() {<br />
+            <div class="indent">
+              if ($(this).scrollTop() > 160) {<br />
+                /* 160 = the distance from the top of the page in pixels when you want it to appear */<br />
+                <div class="indent">
+                  $('.back-to-top').fadeIn();<br />
+                </div>
+              } else {<br />
+                <div class="indent">
+                  $('.back-to-top').fadeOut();<br />
+                </div>
+              }<br />
+            </div>
+          });
+      </code>
+			</div>
+		</div>
+	</section>
+
   <section id="popup">
 		<h2>Popup Window</h2>
 		<div>
@@ -534,6 +618,10 @@
 
     <p><a href="https://github.com/woocommerce/FlexSlider/wiki/FlexSlider-Properties" target="_blank">Read about more customization options here</a>.</p>
 	</section>
+
+  <a href="#" class="back-to-top">
+    <img src="img/back-top.png" alt="back to top" />
+  </a>
 
   <footer>
     <p>&copy; 2011 - 2018 Ladies Learning Code</p>

@@ -186,6 +186,24 @@ h3{
   margin: auto;
 }
 
+/* ---- Back to Top ---- */
+.back-to-top{
+  display: none;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.back-to-top img{
+  width: 100%;
+}
+@media (max-width: 540px){
+  .back-to-top{
+      height: 60px;
+      width: 60px;
+  }
+}
 
 footer{
   padding: 40px 60px;

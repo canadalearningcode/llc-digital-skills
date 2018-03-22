@@ -49,3 +49,11 @@ $(document).ready(function(){
 	photoGallery();
 	flexSlider();
 });
+
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 160) {
+        $('.back-to-top').fadeIn();
+    } else {
+        $('.back-to-top').fadeOut();
+    }
+});
