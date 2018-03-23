@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Code Library | Ladies Learning Code</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/flexslider.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+
+	<header>
+		<a class="logo" href="index.html"><img src="http://ladieslearningcode.github.io/llc-digital-skills/assets/img/logo-llc-horizontal.svg" alt="Ladies Learning Code"></a>
+		<h1>Digital Skills Program</h1>
+		<nav>
+			<a href="http://ladieslearningcode.github.io/llc-digital-skills/">Home</a>
+			<a href="http://digitalskills.slack.com" target="_blank">Slack group</a>
+		</nav>
+	</header>
+
+	<ul class="navigation">
+		<li><a href="#accordions">Accordions</a></li>
+    <li><a href="#mobile-menu">Mobile Menu</a></li>
+    <li><a href="#smooth-scroll">Smooth Scroll</a></li>
+    <li><a href="#back-to-top">Back to top</a></li>
+    <li><a href="#popup">Popup Window</a></li>
+    <li><a href="#photo-slider">Photo Slider</a></li>
+	</ul>
+
+	<section id="accordions">
+		<h2>Accordions</h2>
+		<div class="example-accordion">
+			<h3>Accordion item</h3>
+			<div>Content for the first drawer</div>
+			<h3>Another accordion item</h3>
+			<div>Content for the second drawer</div>
+		</div>
+
+    <hr />
+
+		<strong>Dependencies:</strong>
+		<ul>
+			<li>Include script for <a href="http://jquery.com/download/" target="_blank">jQuery</a></li>
+			<li>Include script for <a href="http://jqueryui.com/download/" target="_blank">jQuery UI</a></li>
+			<li>Include script for <a href="https://cdn.fontawesome.com/" target="_blank">FontAwesome icon fonts</a> (will require your email address)</li>
+
+		</ul>
+
+		<div class="code-blocks">
+			<strong>HTML</strong>
+			<div class="code">
+				<code>
+					&lt;!-- Parent container - use this selector in your jQuery--&gt;<br />
+					&lt;div id="accordion"&gt;<br />
+					<div class="indent">
+						&lt;!-- Each accordion needs a title and a container for its content --&gt;<br />
+						&lt;h3&gt;Section 1&lt;/h3&gt;<br />
+						&lt;div&gt;<br />
+							<div class="indent">
+								&lt;!-- This can contain paragraps, images, lists and hyperlinks.
+								Don't put more divs inside this div! --&gt;<br />
+								&lt;p&gt;Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+								ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+								amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+								odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.&lt;/p&gt;
+							</div>
+						&lt;/div&gt;<br />
+						<!-- add as many as you need! -->
+						&lt;h3&gt;Section 2&lt;/h3&gt;<br />
+						&lt;div&gt;<br />
+							<div class="indent">
+								&lt;p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+								ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+								amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+								odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.&lt;/p&gt;
+							</div>
+						&lt;div&gt;<br />
+					</div>
+					&lt;/div&gt;
+				</code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>CSS</strong>
+			<div class="code">
+        <code>
+				/* customize to your liking - this is just a starting template */<br />
+        #accordion h3{<br />
+        	<div class="indent">
+          border: 1px solid;<br />
+        	padding: 10px;<br />
+        	position: relative;<br />
+          </div>
+        }<br />
+        /* for arrow on the right side of the heading */<br />
+        #example-accordion h3:after{<br />
+          <div class="indent">
+        	content: '\f107';<br />
+        	display: block;<br />
+        	font-family: 'FontAwesome';<br />
+        	position: absolute;<br />
+        	right: 20px;<br />
+        	top: 10px;<br />
+        	height: 20px;<br />
+        	width: 20px;<br />
+          </div>
+        }<br />
+        /* change direction of arrow on opened drawer */<br />
+        #example-accordion h3.ui-state-active:after{<br />
+          <div class="tabbed">
+        	content: '\f106';
+          </div>
+        }<br />
+      </code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>JS</strong>
+			<div class="code">
+        <code>
+				/* use your container div in the selector */
+				$("#accordion").accordion();
+      </code>
+			</div>
+		</div>
+	</section>
+
+
+
+  <section id="mobile-menu">
+		<h2>Mobile Menu</h2>
+
+    <a href="#" class="hamburger">&#8801;</a>
+    <nav>
+      <a href="#" class="close">&times;</a>
+    	<ul>
+    		<li><a href="#about">About</a></li>
+    		<li><a href="#social">Social</a></li>
+    		<li><a href="#contact">Contact</a></li>
+    	</ul>
+    </nav>
+    <p>(Resize the screen to see me in action!)</p>
+
+    <hr />
+
+		<strong>Dependencies:</strong>
+		<ul>
+			<li>Include script for <a href="http://jquery.com/download/" target="_blank">jQuery</a></li>
+		</ul>
+
+		<div class="code-blocks">
+			<strong>HTML</strong>
+			<div class="code">
+				<code>
+          &lt;nav&gt;<br />
+          <div class="indent">
+          	&lt;ul&gt;<br />
+              <div class="indent">
+          		&lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;<br />
+          		&lt;li&gt;&lt;a href="#social"&gt;Social&lt;/a&gt;&lt;/li&gt;<br />
+          		&lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;<br />
+              </div>
+          	&lt;/ul&gt;<br />
+          </div>
+          &lt;/nav&gt;<br />
+				</code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>CSS</strong>
+			<div class="code">
+        <code>
+				/* hide hamburger and close button for large screens */<br />
+        .hamburger, .close{<br />
+          <div class="indent">
+          display: none;<br />
+          </div>
+        }<br />
+        /* for small tablets or mobile phones */<br />
+        @media (max-width: 650px) {<br />
+          <div class="indent">
+          .hamburger{<br />
+            <div class="indent">
+            display: block;<br />
+            font-size: 3rem;<br />
+            font-family: 'FontAwesome';<br />
+            font-weight: bold;<br />
+            text-decoration: none;<br />
+            </div>
+          }<br />
+          nav{<br />
+            <div class="indent">
+            /* hide nav on mobile until hamburger is clicked */<br />
+            display: none;<br />
+            </div>
+          }<br />
+          /* when JS kicks in and adds class, show the menu! */<br />
+          nav.opened{<br />
+            <div class="indent">
+            background: #b109aa;<br />
+            display: block;<br />
+            position: fixed;<br />
+            padding-top: 20px;<br />
+            top: 0;<br />
+            left: 0;<br />
+            height: 100%;<br />
+            width: 100%;<br />
+            text-align: center;<br />
+            </div>
+          }<br />
+          nav.opened li{<br />
+            <div class="indent">
+            display: block;<br />
+            margin: 0 0 10px 0;<br />
+            </div>
+          }<br />
+          nav.opened a{<br />
+            <div class="indent">
+            color: white;<br />
+            text-decoration: none;<br />
+            </div>
+          }<br />
+          nav .close{<br />
+            <div class="indent">
+            color: white;<br />
+            display: block;<br />
+            font-size: 3rem;<br />
+            font-family: 'FontAwesome';<br />
+            font-weight: bold;<br />
+            position: absolute;<br />
+            top: 20px;<br />
+            right: 20px;<br />
+            text-decoration: none;<br />
+            </div>
+          }<br />
+          </div>
+        }<br />
+      </code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>JS</strong>
+			<div class="code">
+        <code>
+        $(".close, .hamburger").click(function(e){<br />
+    			<div class="indent">
+            /* prevents page from scrolling to the top */<br />
+            e.preventDefault();<br />
+    			  $('nav').toggleClass('opened');<br />
+          </div>
+    		});
+      </code>
+			</div>
+		</div>
+	</section>
+
+
+  <section id="smooth-scroll">
+		<h2>Smooth Scroll (like the one on this page!)</h2>
+		<div>
+			<p>Try clicking on one of the buttons at the top of this page. Notice how the page animates slowly until you reach your destination? We call this smooth scroll!</p>
+		</div>
+
+    <hr />
+
+		<strong>Dependencies:</strong>
+		<ul>
+			<li>Include script for <a href="https://github.com/cferdinandi/smooth-scroll/tree/master/dist/js" target="_blank">Smoothscroll plugin</a> (download smooth-scroll.min.js on this page)</li>
+
+		</ul>
+
+		<div class="code-blocks">
+			<strong>HTML</strong>
+			<div class="code">
+				<code>
+          &lt;a href="#anchor"&gt;About&lt;/a&gt;<br />
+          &lt;!-- you probably want some more content here so you can notice the animation --&gt;<br />
+          &lt;div id="anchor"&gt;<br />
+          <div class="indent">
+            &lt;p&gt;Some content goes here&lt;/p&gt;<br />
+          </div>
+          &lt;/div&gt;
+				</code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>CSS</strong>
+			<div class="code">
+        <code>
+          /* nothing to see here! */
+        </code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>JS</strong>
+			<div class="code">
+        <code>
+				var scroll = new SmoothScroll('a[href*="#"]');
+      </code>
+			</div>
+		</div>
+	</section>
+
+  <section id="back-to-top">
+		<h2>Back to Top button</h2>
+		<div>
+			<p>You may have noticed our button following you in the bottom right hand-side of the screen. Combine this with Smooth Scroll (section above) for a nice effect. You will also notice that it only appears after you scroll past a certain point on the page. You can use the JS below to implement this</p>
+		</div>
+
+    <hr />
+
+		<strong>Dependencies:</strong>
+		<ul>
+      <li>Include script for <a href="http://jquery.com/download/" target="_blank">jQuery</a></li>
+		</ul>
+
+		<div class="code-blocks">
+			<strong>HTML</strong>
+			<div class="code">
+				<code>
+          &lt;a href="#"&gt;<br />
+          <div class="indent">
+            &lt;img src="images/back-top.png" alt="back to top" /&gt;
+          </div>
+          &lt;/a&gt;
+				</code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>CSS</strong>
+			<div class="code">
+        <code>
+          .back-to-top{<br />
+            <div class="indent">
+            display: block;<br />
+            width: 100px;<br />
+            height: 100px;<br />
+            position: fixed;<br />
+            bottom: 20px;<br />
+            right: 20px;<br />
+            </div>
+          }<br />
+          .back-to-top img{<br />
+            <div class="indent">
+            width: 100%;<br />
+            </div>
+          }<br />
+          @media (max-width: 540px){<br />
+            <div class="indent">
+            .back-to-top{<br />
+              <div class="indent">
+                height: 60px;<br />
+                width: 60px;<br />
+              </div>
+            }<br />
+            </div>
+          }
+        </code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>JS</strong>
+			<div class="code">
+        <code>
+          /* this must be outside of the $(document).ready function */<br />
+          $(window).scroll(function() {<br />
+            <div class="indent">
+              if ($(this).scrollTop() > 160) {<br />
+                /* 160 = the distance from the top of the page in pixels when you want it to appear */<br />
+                <div class="indent">
+                  $('.back-to-top').fadeIn();<br />
+                </div>
+              } else {<br />
+                <div class="indent">
+                  $('.back-to-top').fadeOut();<br />
+                </div>
+              }<br />
+            </div>
+          });
+      </code>
+			</div>
+		</div>
+	</section>
+
+  <section id="popup">
+		<h2>Popup Window</h2>
+		<div>
+			<p>This is usually referred to as a lightbox. It can contain an image, text, or both!</p>
+
+      <button id="magnific-popup">Open popup</button>
+
+      <div id="test-popup" class="white-popup mfp-hide">
+        <h2>Dynamically created popup</h2>
+        <p>Add whatever content here that you need!</p>
+      </div>
+
+      <p>Click on an image below to open up a gallery</p>
+
+      <div class="popup-gallery">
+      	<a href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" title="The Cleaner"><img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" width="75" height="75"></a>
+      	<a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" title="Winter Dance"><img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" width="75" height="75"></a>
+      	<a href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" title="The Uninvited Guest"><img src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg" width="75" height="75"></a>
+      	<a href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" title="Oh no, not again!"><img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg" width="75" height="75"></a>
+      	<a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" title="Swan Lake"><img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg" width="75" height="75"></a>
+      	<a href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" title="The Shake"><img src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" width="75" height="75"></a>
+      	<a href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" title="Who's that, mommy?"><img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75"></a>
+      </div>
+		</div>
+
+    <hr />
+
+		<strong>Dependencies:</strong>
+		<ul>
+      <li>Include script for <a href="http://jquery.com/download/" target="_blank">jQuery</a></li>
+			<li>Go to <a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank">Magnific Popup</a>'s website and click on the 'Build tool' link at the top of the page. You only need the Inline, Image and Gallery options to run the examples above. Keep the 'minify code' option selected for maximum performance.
+        <ul>
+          <li>Copy the js provided and create a new file called <strong>magnific-popup.js</strong></li>
+        </ul>
+      </li>
+      <li>Include <a href="https://raw.githubusercontent.com/dimsemenov/Magnific-Popup/master/dist/magnific-popup.css" target="_blank">this CSS</a>
+		</ul>
+
+    <h3>For a Popup Message:</h3>
+
+		<div class="code-blocks">
+			<strong>HTML</strong>
+			<div class="code">
+				<code>
+          &lt;button id="popup"&gt;Open popup&lt;/button&gt;<br />
+
+          &lt;div id="popup-content" class="white-popup mfp-hide"&gt;<br />
+          <div class="indent">
+            &lt;h2&gt;Dynamically created popup&lt;/h2&gt;<br />
+            &lt;p&gt;Add whatever content here that you need!&lt;/p&gt;<br />
+          </div>
+          &lt;/div&gt;
+				</code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>CSS</strong>
+			<div class="code">
+        <code>
+          /* customize this to your liking */<br />
+          .white-popup{<br />
+            <div class="indent">
+            background: white;<br />
+            padding: 40px;<br />
+            max-width: 800px;<br />
+            margin: auto;<br />
+            text-align: center;<br />
+            </div>
+          }
+        </code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>JS</strong>
+			<div class="code">
+        <code>
+          $('#popup').magnificPopup({<br />
+      		  <div class="indent">
+              items: {<br />
+                <div class="indent">
+      		      type: 'inline',<br />
+      					src: '#popup-content',<br />
+                </div>
+      		  }</div>
+      		});
+      </code>
+			</div>
+		</div>
+
+    <h3>For a Photo Gallery:</h3>
+
+    <div class="code-blocks">
+			<strong>HTML</strong>
+			<div class="code">
+				<code>
+          &lt;div class="popup-gallery"&gt;
+          <div class="indent">
+          	&lt;a href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" title="The Cleaner"&gt;&lt;img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" &gt;&lt;/a&gt;<br />
+            &lt;!-- Add as many items as you would like in your gallery --&gt;
+          </div>
+          &lt;/div&gt;
+				</code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>CSS</strong>
+			<div class="code">
+        <code>
+          /* All you need is the the magnific-popup.css listed in the Dependencies list */
+        </code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>JS</strong>
+			<div class="code">
+        <code>
+          $('.popup-gallery a').magnificPopup({<br />
+            <div class="indent">
+      			type: 'image',<br />
+      			gallery:{<br />
+              <div class="indent">
+      				enabled:true<br />
+              </div>
+      			}<br />
+          </div>
+      		});
+      </code>
+			</div>
+		</div>
+	</section>
+
+  <section id="photo-slider">
+		<h2>Photo Slider</h2>
+
+    <p>This is sometimes referred to as a carousel or image rotator.</p>
+
+    <div class="flexslider">
+      <ul class="slides">
+        <li><img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" /></li>
+        <li><img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" /></li>
+        <li><img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" /></li>
+        <li><img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" /></li>
+      </ul>
+    </div>
+
+    <hr />
+
+		<strong>Dependencies:</strong>
+		<ul>
+			<li>Go to the <a href="https://woocommerce.com/flexslider/" target="_blank">Flexslider website</a> and click on the green 'Download Flexslider' button. If you are on a PC extract that folder in your downloads.
+        <ul>
+          <li>Copy the <strong>flexslider.css</strong> file and paste it into your project's css folder</li>
+          <li>Copy the <strong>jquery.flexslider-min.js</strong> file and paste it into your project's js folder</li>
+          <li>Copy the fonts folder and paste it into your project's root folder</li>
+          <li>Your folder structure should now <a href="img/flexslider.jpg" target="_blank">look like this</a></li>
+        </ul>
+      </li>
+		</ul>
+
+    <p>With these files in place, you will need to edit the <strong>flexslider.css</strong> file. Flexslider is using an icon font to implement the next and previous arrows on the sides of the slider. We need to point to our fonts folder so that the arrows appear properly.</p>
+
+    Go to line 15 of that file and update the paths to the following:
+    <div class="code" style="width: 80%; height: 200px;">
+      <code>
+        @font-face {
+          <div class="indent">
+          font-family: 'flexslider-icon';<br />
+          src: url('../fonts/flexslider-icon.eot');<br />
+          src: url('../fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),<br /> url('../fonts/flexslider-icon.woff') format('woff'), url('../fonts/flexslider-icon.ttf') format('truetype'),<br /> url('../fonts/flexslider-icon.svg#flexslider-icon') format('svg');<br />
+          font-weight: normal;<br />
+          font-style: normal;<br />
+          </div>
+        }
+      </code>
+    </div>
+
+    <p>Other stuff you will need:</p>
+
+		<div class="code-blocks">
+			<strong>HTML</strong>
+			<div class="code">
+				<code>
+          &lt;div class="flexslider"&gt;<br />
+          <div class="indent">
+            &lt;ul class="slides"&gt;<br />
+            <div class="indent">
+              &lt;li&gt;&lt;img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" /&gt;&lt;/li&gt;<br />
+              &lt;!-- Add as many items as you would like in your slider --&gt;<br />
+            </div>
+            &lt;/ul&gt;<br />
+            </div>
+          &lt;/div&gt;
+				</code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>CSS</strong>
+			<div class="code">
+        <code>
+          .flexslider{<br />
+            max-width: 850px; /* customize this value to your needs */<br />
+            margin: auto;<br />
+          }
+      </code>
+			</div>
+		</div>
+
+		<div class="code-blocks">
+			<strong>JS</strong>
+			<div class="code">
+        <code>
+        $('.flexslider').flexslider({<br />
+    	    animation: "slide", // other option: "fade"<br />
+          animationLoop: false, // give the slider a seamless loop<br />
+          animationSpeed: 600 // Set the speed of animation in milliseconds<br />
+    	  });
+      </code>
+			</div>
+		</div>
+
+    <p><a href="https://github.com/woocommerce/FlexSlider/wiki/FlexSlider-Properties" target="_blank">Read about more customization options here</a>.</p>
+	</section>
+
+  <a href="#" class="back-to-top">
+    <img src="img/back-top.png" alt="back to top" />
+  </a>
+
+  <footer>
+    <p>&copy; 2011 - 2018 Ladies Learning Code</p>
+  </footer>
+
+
+	<script src="https://use.fontawesome.com/af587964a8.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/magnific-popup.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+</html>

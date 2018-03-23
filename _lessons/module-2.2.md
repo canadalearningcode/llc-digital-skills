@@ -25,7 +25,7 @@ The browser looks at every HTML element on the page as a square/rectangular box.
 CSS uses 5 properties to determine the size and spacing of these boxes: 
 
 * `width` - change the default width
-* `height` - change the default width
+* `height` - change the default height
 * `margin` - add or remove default space *around* the element
 * `padding` - add or remove default space *inside* the element
 * `border` -  add a border around the element

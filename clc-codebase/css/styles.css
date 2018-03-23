@@ -1,0 +1,210 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+	color: #808080;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+}
+header{
+	background: #1a1a1a;
+	color: white;
+	padding: 40px 60px;
+}
+a{
+  color: #b109aa;
+}
+header a{
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 20px;
+}
+h1{
+	color: white;
+	text-transform: uppercase;
+}
+strong{
+  color: #2d2d2d;
+}
+
+.navigation{
+	margin: 2rem 0;
+}
+.navigation li{
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 10px 0 0;
+}
+.navigation a,
+button{
+	background: #e9e6e3;
+	border-radius: 5px;
+	color: #b109aa;
+  display: inline-block;
+	font-weight: bold;
+	padding: 6px 12px;
+	text-decoration: none;
+}
+
+section{
+  padding: 0 20px;
+	margin: 0 auto 100px;
+	max-width: 1140px;
+}
+hr{
+  margin: 40px 0;
+}
+h2{
+	color: #432844;
+	font-size: 2rem;
+}
+h3{
+	color: #432844;
+	font-size: 1.6rem;
+}
+.code-blocks{
+	display: inline-block;
+	margin: 0 1.5%;
+	vertical-align: top;
+	width: 30%;
+}
+.code{
+	background: #e9e6e3;
+	border: 1px solid #aaa6a6;
+	color: #432844;
+	font-size: 1rem;
+	padding: 10px;
+	height: 300px;
+	overflow-y: scroll;
+}
+.code strong{
+	font-weight: bold;
+	color: #b109aa;
+}
+.code .indent{
+	padding-left: 20px;
+}
+@media (max-width: 650px) {
+  .code-blocks{
+    margin: 0 0 40px 0;
+    width: 100%;
+  }
+}
+
+/* ---- Accordions ---- */
+.example-accordion h3{
+	border: 1px solid;
+	padding: 10px;
+	position: relative;
+}
+.example-accordion h3:after{
+	content: '\f107';
+	display: block;
+	font-family: 'FontAwesome';
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	height: 20px;
+	width: 20px;
+}
+.example-accordion h3.ui-state-active:after{
+	content: '\f106';
+}
+
+/* ---- Mobile Menu ---- */
+#mobile-menu nav ul{
+  padding: 0;
+}
+#mobile-menu nav li{
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+.hamburger, .close{
+  display: none;
+}
+@media (max-width: 650px) {
+  .hamburger{
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  #mobile-menu nav{
+    position: fixed;
+    top: -100vh;
+  }
+  #mobile-menu nav.opened{
+    background: #b109aa;
+    display: block;
+    padding-top: 20px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  #mobile-menu nav.opened li{
+    display: block;
+    margin: 0 0 10px 0;
+  }
+  #mobile-menu nav.opened a{
+    color: white;
+    text-decoration: none;
+  }
+  #mobile-menu nav .close{
+    color: white;
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+  }
+}
+
+
+/* ---- Popup Window ---- */
+.white-popup{
+  background: white;
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ---- Photo Slider ---- */
+.flexslider{
+  max-width: 850px;
+  margin: auto;
+}
+
+/* ---- Back to Top ---- */
+.back-to-top{
+  display: none;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.back-to-top img{
+  width: 100%;
+}
+@media (max-width: 540px){
+  .back-to-top{
+      height: 60px;
+      width: 60px;
+  }
+}
+
+footer{
+  padding: 40px 60px;
+}
