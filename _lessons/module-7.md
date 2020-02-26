@@ -627,14 +627,12 @@ Templates also enable us to put code that we use more than once (eg. the footer 
 
 There's your theme. Great job! You've built your own simple theme and it works! Where do we go from here?
 
-> ### Sharing Your Site
-> As you develop and test your site, you might want to get feedback from others (friends, Digital Skills peers, mentors, the instructor!). To create a shareable link, select **Enable** at the bottom of your Local window, then copy and share the URL that is generated.
-> ![]({{site.img}}/module7/local-live-enable.png)
-> ![]({{site.img}}/module7/local-live-link.png)
->
-> Note: This link will only work while your site is live. Be sure to click on **Start Site** in the top right corver of your Local window first.
-> ![]({{site.img}}/module7/local-start-site.png)
->
+## Sharing Your Site
+
+As you develop and test your site, you might want to get feedback from others (friends, Digital Skills peers, mentors, the instructor!). To create a shareable link, select **Enable** at the bottom of your Local window, then copy and share the URL that is generated. <br> ![]({{site.img}}/module7/local-live-enable.png) <br> ![]({{site.img}}/module7/local-live-link.png)
+
+Note: This link will only work while your site is live. Be sure to click on **Start Site** in the top right corver of your Local window first. <br> ![]({{site.img}}/module7/local-start-site.png)
+
 
 ## More WordPress
 
