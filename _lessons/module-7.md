@@ -137,42 +137,52 @@ You can see below what a page *hardcoded* in HTML would look like vs a template 
 WordPress is a collection of files, just like our project. The only difference is that WordPress files are written in a language called PHP, which talk to the database which houses the content the website will display on each page. (See diagram above)
 Here's how we would set up a WordPress website:
 
-1. Download the WordPress files from [wordpress.org](https://wordpress.org/)
+1. Download the WordPress files from wordpress.org
 1. Set up a database on a server (this could be a local server on your computer, or from your hosting provider).
 1. Connect the WP files to the database so they can communicate with each other. This is done in the `wp-config.php` file that you download from wordpress.org in step 1.
 
-It's only 3 steps, but they can be a little tricky. Instead of running a local server today, we're going to use a free service called [Code Anywhere](https://codeanywhere.com/). This will set up the server, the database and the files we need all in one fell swoop!
+It's only 3 steps, but they can be a little tricky. We're going to run a local server using a free service called [Local](https://localwp.com/). This will set up the server, the database and the files we need all in one fell swoop!
 
-## WordPress and Code Anywhere
+## WordPress and Local
 
-[Code Anywhere](https://codeanywhere.com/) is a free service that allows you to develop any type of website or application in the browser. It's a great tool for collaborating with others and for learning.
+[Local](https://localwp.com/) is a free development environment that allows us to develop WordPress sites locally. While a web host is usually a paid service where a company stores our website on a server for us, hosting locally means that we are running a server on our personal computer.
 
-Code Anywhere is referred to as an Integrated Development Environment(IDE). It integrates an editor, a browser and a console, all in one.
+Using a local host allows us to test and debug our websites before sharing them widely online. If we're weighing the [pros and cons](https://webable.eu/en/localhost-web-host/) of these two options, usually using localhost can be a long and slightly complicated process (as laid out above), without a lot of support or the ability to share your site. However, Local helps streamline this process AND allows you to create simple demo URLs to easily share your site with others.
 
 ### Let's set it up!
 
-1. Go to [https://codeanywhere.com/pricing](https://codeanywhere.com/pricing) and sign up for a free account
-![]({{site.img}}/module6/codeanywhere-1.png)
-1. Set your username and password
-1. Verify your account - you will be sent an email with a verification link
-![]({{site.img}}/module6/codeanywhere-2.png)
-1. Go back to Code Anywhere and set up your site: Choose the name, and type "Wordpress" in the search box (either CentOS or Ubuntu work)
-![]({{site.img}}/module6/codeanywhere-3.png)
-1. What opens up is your IDE. Much like our code editor, on the left side you will see a long list of folders and files. These are the files that make up WP. We will come back to these later. First, let's run our WP website to explore the dashboard.
-1. Scroll down to find your website URL. This will looks like: http(s)://name-of-site-yourname804076.codeanyapp.com
-![]({{site.img}}/module6/codeanywhere-4.png)
-1. Go to this URL and follow the steps to set up your WordPress account
-1. Make sure to keep your username and password safe as you'll have to log in immediately after.
-1. Log into your dashboard.
+1. Go to [http://local.getflywheel.com/](http://local.getflywheel.com/) and select 'free download' <br> ![]({{site.img}}/module7/local-download.png)
+1. Select your operating system and enter your email address (this is required) <br> ![]({{site.img}}/module7/local-os.png)
+1. Select 'Download' - This may take a few minutes.
+
+**While Local is downloading, let's set up our (free) WordPress account!**
+
+1. Go to [http://wordpress.com/](http://wordpress.com/)
+1. Click 'Get Started'
+1. Enter your login information (take mental note - we'll need this information for Local in a minute!) <br> ![]({{site.img}}/module7/wp-create.png)
+1. Describe the type of site you are building, name of site, and select the free wordpress option for your website's domain name <br> ![]({{site.img}}/module7/wp-domain.png)
+1. Select 'start with a free site' <br> ![]({{site.img}}/module7/wp-free.png)
+
+**Continuing with Local:**
+
+1. Once Local has downloaded, right-click > Open and follow the installation instructions. Your computer may prompt you with a warning message: "This type of file can harm your computer.. keep anyway?" - We can select 'Keep', as this is a trusted site.
+1. Open Local once it has been installed (it should be in your applications folder). Your computer may prompt you with a warning message: ""Local" is an app downloaded from the Internet. Are you sure you want to open it?" - Select "Open" <br> ![]({{site.img}}/module7/local-icon.png)
+1. Select 'X' and exit the Local Pro advertisement to continue for free.
+1. Select 'Create a new site' <br> ![]({{site.img}}/module7/local-create.png)
+1. Enter your website's name <br> ![]({{site.img}}/module7/local-create2.png)
+1. Select 'Preferred' <br> ![]({{site.img}}/module7/local-create3.png)
+1. Enter your WordPress account info - which we just created. If you're unsure about any of the details, you can find them under your WordPress 'Account Settings' <br> ![]({{site.img}}/module7/local-create4.png)
+1. Click 'Add Site.' You will need admin access to your computer (Local will prompt you to log in as admin)
+
+Troubleshooting: If you come across any issues setting up your site, try searching the error message in the Local community forum, here: [https://localwp.com/community/](https://localwp.com/community/).
 
 > ### Accessing Your Site
-> To access the back end of your site at any time, add **/wp-admin** at the end of your site URL. This will look something like: http(s)://name-of-site-yourname804076.codeanyapp.com/wp-admin
+> To view your site at any time, select 'View Site'
+> ![]({{site.img}}/module7/local-admin.png)
 >
-> **Important to note**: There are some limitations on our free Code Anywhere accounts regarding the amount of hours our container can be powered on per day. If you have trouble viewing your site, you may need to restart the container. To do so, right-click on the container and select **Restart**. Once it has finished restarting, select the play icon to run your site.
+> To access the back end of your site at any time, select 'Admin'
+> ![]({{site.img}}/module7/local-view.png)
 >
-> ![]({{site.img}}/module6/codeanywhere-restart.png)
->
-> To access unlimited daily container usage, you would have to [upgrade your account](https://codeanywhere.com/pricing).
 
 ## Getting to know WordPress
 
@@ -301,13 +311,18 @@ Tags should not be duplicated from your categories. For example, if you are usin
 
 ## The Guts of WordPress
 
-Now that we've poked around a bit in the dashboard, let's go deeper and take a look at the files back in Code Anywhere.
+Now that we've poked around a bit in the dashboard, let's go deeper and take a look at the files back through Local.
+
+You can locate your website's files by clicking the arrow icon beside the file location. This will open up the folder's location on your computer.
+![]({{site.img}}/module7/local-folder.png)
+
+To locate your WordPress files, navigate through 'App' > 'Public'. Here we'll find our WordPress-specific files.
 
 At first glance, it's overwhelming to see how many folders and files WP needs to run. We'll be ignoring the majority of the files which make up the core of WP. You have the ability to change those files, but most people leave them exactly as is. All the files we'll be looking at and editing are in the `wp-content` folder.
 
 Inside of `wp-content` folder, there is a folder named `themes`. That'll be our most used folder.
 
-Outside of `wp-content` we may need to look at `wp-config.php` to provide our database credentials. Today, Code Anywhere is doing all that database work for us.
+Outside of `wp-content` we may need to look at `wp-config.php` to provide our database credentials. Today, Local is doing all that database work for us.
 
 > **Pro tip:** a lot of hosting providers offer a quick WordPress setup option, since WordPress is such a popular tool for building websites. Those providers will also help you with the database setup so you likely won't have to edit the `wp-config.php` file.
 
@@ -329,8 +344,7 @@ In your WordPress Dashboard, go to Appearance > Themes in the left menu to see t
 Today we're going to learn to build our very own theme!
 
 > Let's begin by uploading our project folder into our themes folder. If you want to start from scratch, you may just use the [sample starter project folder.](exercises/module5/project-one-sample-w-js.zip).
-> 1. In Code Anywhere, upload your project folder by clicking on the `themes` folder inside `wp-content` so that it's highlighted. Then right-click > `upload` and select the root of the project folder on your computer.
-![]({{site.img}}/module6/codeanywhere-upload.gif)
+> 1. Upload your project folder by clicking and dragging it into the `themes` folder inside of `wp-content`
 > 1. Next, we need to make WordPress recognize this folder as a WordPress theme. To do this, find your projects main `css` file and make sure it is named `style.css` if it is not already.
 >1. Copy the snippet below and paste it at the very top of your `style.css` file. Edit the theme name, author and description:
 
@@ -349,7 +363,7 @@ Today we're going to learn to build our very own theme!
         Use it to make something cool, have fun, and share what you've learned with others.
         */
 
-> 4. The next thing we must do is rename `index.html` to `index.php` (right click on file to rename in Code Anywhere)
+> 4. The next thing we must do is rename `index.html` to `index.php` (right click on file to rename it)
 > 5. Go back to your WordPress dashboard and go to Appearance > Themes. Refresh the page to check whether your new theme shows up. If it does, go ahead and activate it.
 >
 > How does it look?
@@ -410,7 +424,7 @@ We use template tags anytime we want to ask WordPress for content of any kind th
 >
 >We will begin with the ``<head></head>`` in our `index.php` file.
 >
->Open up your index.php file in Code Anywhere. We'll be adding the following template tags to dynamically pull information from WP :
+>Open up your index.php file in Atom. We'll be adding the following template tags to dynamically pull information from WP :
 >
 >Where should these go?
 >
@@ -606,7 +620,9 @@ Templates also enable us to put code that we use more than once (eg. the footer 
 >
 >
 > 8. Below this, copy over everything from your `index.php` file there and delete what you don't want - in this case, the banner.
-> 9. Going back to the WP dashboard, go to Pages > About. In the right column, scroll down to the section called 'Page Attributes', and in the 'Template' dropdown select the About template you just created.
+> 9. Going back to the WP dashboard, create a new page called "About" if you don't already have one.
+> 10. In the right column of the About page, scroll down to the section called 'Page Attributes', and in the 'Template' dropdown select the About template you just created. <br> ![]({{site.img}}/module5/wp-about-template.png)
+> 11. In your `header.php` file, update the navigation bar links accordingly (e.g. `<li><a href="about">About</a></li>`)
 
 
 There's your theme. Great job! You've built your own simple theme and it works! Where do we go from here?
@@ -699,7 +715,7 @@ The `functions.php` file is probably the most powerful file we can use in our th
 >
 > 3. Go to the Dashboard and navigate to Appearance > Menus - now this is available!
 > 4. Create a Menu with the three links to your 3 pages. Make sure to pick 'Header Menu' as the location when you create the menu.
-> 5. In Code Anywhere, go to the `header.php` file in your theme and replace the `ul` inside your `nav` with the following:
+> 5. Go to the `header.php` file in your theme and replace the `ul` inside your `nav` with the following:
 >
 
     <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
@@ -740,7 +756,7 @@ Sidebars enable you to add [WP widgets](https://www.wpbeginner.com/glossary/widg
 >      add_action( 'widgets_init', 'themename_widgets_init' );
 >
 > 2. In the WP dashboard, Go to Appearance > Widgets and add 3 widgets to your sidebar. **Tip:** If you use the 'Text widget' you can enter any HTML in the widget, including script tags from a video embed, or twitter feed!
-> 3. In Code Anywhere, find your `page.php` and add this code where you want the widgets to appear:
+> 3. Find your `page.php` and add this code where you want the widgets to appear:
 >
 >        <?php dynamic_sidebar(); ?>
 

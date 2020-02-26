@@ -37,36 +37,32 @@ You'll need 3 things:
 * an FTP client - software/app to upload files to the server
 
 
-## Removing your files from Code Anywhere
+## Exporting your files from Local
 
-Before we explore the subject of moving files to a server, let's see how we can export our files from Code Anywhere.
+Before we explore the subject of moving files to a server, let's see how we can export our files from Local.
 
 First, remember that WordPress websites have the theme files, overall WordPress core files, AND a database file. To launch a WordPress website on your own server, you'll need all of these.
 
-Here's how to remove them from Code Anywhere:
+Here's how to export them from Local:
 
-> ## Bonus Exercise: Accessing your files on Code Anywhere
+> ## Bonus Exercise: Accessing your files on Local
 > ### Getting the database
 >
->To grab our database file which contains all of our settings and actual pages and posts content in the website, we need to access a program called phpMyAdmin. This is a graphical user interface (GUI) that makes it easy to interact with MySQL databases.
+>To grab our database file which contains all of our settings and actual pages and posts content in the website, we need to access a program called Adminer. This is a graphical user interface (GUI) that makes it easy to interact with MySQL databases.
 >
-> 1. Find your phpMyAdmin URL. Looks like: https://name-of-site-yourname804076.codeanyapp.com/phpmyadmin
-> ![]({{site.img}}/module7/codeanywhere-php.png)
+> 1. In Local, navigate to the "Database" tab.
 >
-> 1. Log in with **root** (leave password blank)
-> ![]({{site.img}}/module7/phpmyadmin.png)
+> 1. Select "Adminer" to open the program in your browser.  
+> ![]({{site.img}}/module7/local-db.png)
 >
-> 1. You'll select the **wordpress** database on the sidebar, then go to **Export** to download the database for your website.
-> Select **custom**.
-> ![]({{site.img}}/module7/myphp-export1.png)
+> 1. Select **Export** from the sidebar, then **gzip**, and **Export** to download the database for your website.
+> ![]({{site.img}}/module7/sql-export.png)
 >
-> 1. Select **zipped** compression > **Go**:
-> ![]({{site.img}}/module7/myphp-export2.png)
+> 1. As for the rest of your site, you can use the project folder that was created by Local and upload these files to a hosting service, or use the built-in hosting service provided by Local under the "Connect" tab.
+> ![]({{site.img}}/module7/local-connect.png)
 >
-> 1. Once you're finished downloading the database, go back to Code Anywhere. Select your entire project folder, right click on it and select download.
-> You will use the files and the database to upload them to a hosting service/server.
 > ### Resources
-Watch this awesome video walkthrough of [how to launch a wordpress website](http://wesbos.com/migrate-wordpress/) by Wes Bos:
+If you are using an external hosting service, watch this awesome video walkthrough of [how to launch a wordpress website](http://wesbos.com/migrate-wordpress/) by Wes Bos:
 
 ## Server vs Domain
 
